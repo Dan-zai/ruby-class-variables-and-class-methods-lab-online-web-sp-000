@@ -31,29 +31,18 @@ class Song
   end
     
     
-  def self.genre_count
-    hashish = {}
-    @@genres.each do |gen|
-      if hashish[gen] == nil 
-        hashish[gen] = 1 
-      else
-        hashish[gen] += 1
-  end
-end
-hashish
-end
+def self.genre_count
+    genre_count = Hash.new(0) #found on stack overflow for easier method
+    #
+    @@genres.each {|gen| genre_count[genre] += 1}
+    genre_count
+  end   
 
-  def self.artist_count
-    hashish = {}
-    @@artists.each do |art|
-      if hashish[art] == nil
-        hashish[art] = 1 
-      else
-        hashish[art] += 1
-  end
-end
-hashish
-end
+def self.artist_count
+    artist_count = Hash.new(0)
+    @@artists.each {|artist| artist_count[artist] += 1}
+    artist_count
+  end   
     
     
     
