@@ -33,7 +33,7 @@ class Song
     
 def self.genre_count
     genre_count = Hash.new(0) #found on stack overflow for easier method
-    #
+    #If we create a hash object using Hash.new(0), the parameter, 0 in this case, will be used as the hash’s default value—it will be the value returned if you look up a key that isn’t yet in the hash (eg: the argument being passed in from @@genres)
     @@genres.each {|gen| genre_count[genre] += 1}
     genre_count
   end   
